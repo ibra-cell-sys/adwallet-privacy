@@ -1,0 +1,514 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>AdWallet Privacy Policy</title>
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Syne:wght@700;800&family=DM+Sans:ital,wght@0,400;0,500;1,400&display=swap" rel="stylesheet" />
+<style>
+  /* ── Tokens ─────────────────────────────────────────────── */
+  :root {
+    --bg:           #F8FAFC;
+    --bg-alt:       #EFF3F8;
+    --surface:      #FFFFFF;
+    --border:       #CBD5E1;
+    --border-accent:#BFDBFE;
+    --accent:       #2563EB;
+    --accent-dim:   #1D4ED8;
+    --text:         #0F172A;
+    --text-2:       #334155;
+    --text-3:       #64748B;
+    --rule:         rgba(37,99,235,0.15);
+    --chip-bg:      rgba(37,99,235,0.08);
+    --chip-text:    #1D4ED8;
+  }
+
+  @media (prefers-color-scheme: dark) {
+    :root:not([data-theme="light"]) {
+      --bg:           #0A1120;
+      --bg-alt:       #0F1928;
+      --surface:      #111827;
+      --border:       #1E3A5F;
+      --border-accent:#1E40AF;
+      --accent:       #3B82F6;
+      --accent-dim:   #60A5FA;
+      --text:         #F1F5F9;
+      --text-2:       #CBD5E1;
+      --text-3:       #64748B;
+      --rule:         rgba(59,130,246,0.12);
+      --chip-bg:      rgba(59,130,246,0.12);
+      --chip-text:    #93C5FD;
+    }
+  }
+
+  :root[data-theme="dark"] {
+    --bg:           #0A1120;
+    --bg-alt:       #0F1928;
+    --surface:      #111827;
+    --border:       #1E3A5F;
+    --border-accent:#1E40AF;
+    --accent:       #3B82F6;
+    --accent-dim:   #60A5FA;
+    --text:         #F1F5F9;
+    --text-2:       #CBD5E1;
+    --text-3:       #64748B;
+    --rule:         rgba(59,130,246,0.12);
+    --chip-bg:      rgba(59,130,246,0.12);
+    --chip-text:    #93C5FD;
+  }
+
+  /* ── Reset ──────────────────────────────────────────────── */
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    font-family: 'DM Sans', system-ui, sans-serif;
+    font-size: 16px;
+    line-height: 1.7;
+    color: var(--text);
+    background: var(--bg);
+    -webkit-font-smoothing: antialiased;
+  }
+
+  /* ── Layout ─────────────────────────────────────────────── */
+  .shell {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 0 24px;
+    display: flex;
+    gap: 56px;
+    align-items: flex-start;
+  }
+
+  nav.toc {
+    display: none;
+    position: sticky;
+    top: 56px;
+    width: 220px;
+    flex-shrink: 0;
+    padding-top: 4px;
+  }
+
+  @media (min-width: 960px) {
+    nav.toc { display: block; }
+  }
+
+  main {
+    flex: 1;
+    min-width: 0;
+    max-width: 680px;
+    padding: 72px 0 96px;
+  }
+
+  /* ── Header ─────────────────────────────────────────────── */
+  header {
+    padding: 40px 0 48px;
+    border-bottom: 1px solid var(--rule);
+    margin-bottom: 48px;
+  }
+
+  .wordmark {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 28px;
+  }
+
+  .wordmark-icon {
+    width: 36px;
+    height: 36px;
+    background: var(--accent);
+    border-radius: 9px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+  }
+
+  .wordmark-icon svg { display: block; }
+
+  .wordmark-text {
+    font-family: 'Syne', sans-serif;
+    font-size: 18px;
+    font-weight: 800;
+    color: var(--text);
+    letter-spacing: -0.01em;
+  }
+
+  h1 {
+    font-family: 'Syne', sans-serif;
+    font-size: clamp(28px, 4vw, 40px);
+    font-weight: 800;
+    line-height: 1.15;
+    letter-spacing: -0.02em;
+    color: var(--text);
+    text-wrap: balance;
+    margin-bottom: 16px;
+  }
+
+  .meta {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    align-items: center;
+  }
+
+  .chip {
+    font-size: 12px;
+    font-weight: 500;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    color: var(--chip-text);
+    background: var(--chip-bg);
+    border-radius: 4px;
+    padding: 3px 9px;
+  }
+
+  .meta-sep { color: var(--text-3); font-size: 13px; }
+
+  .meta-date { font-size: 13px; color: var(--text-3); }
+
+  /* ── TOC ────────────────────────────────────────────────── */
+  .toc-label {
+    font-size: 10px;
+    font-weight: 500;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--text-3);
+    margin-bottom: 12px;
+    padding-bottom: 10px;
+    border-bottom: 1px solid var(--rule);
+  }
+
+  .toc-list {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+  }
+
+  .toc-list a {
+    display: block;
+    font-size: 13px;
+    color: var(--text-3);
+    text-decoration: none;
+    padding: 5px 8px;
+    border-radius: 5px;
+    transition: color 0.15s, background 0.15s;
+    line-height: 1.4;
+  }
+
+  .toc-list a:hover,
+  .toc-list a:focus {
+    color: var(--accent);
+    background: var(--chip-bg);
+    outline: none;
+  }
+
+  /* ── Section ────────────────────────────────────────────── */
+  section {
+    margin-bottom: 44px;
+    padding-bottom: 44px;
+    border-bottom: 1px solid var(--rule);
+  }
+
+  section:last-of-type {
+    border-bottom: none;
+    padding-bottom: 0;
+    margin-bottom: 0;
+  }
+
+  h2 {
+    font-family: 'Syne', sans-serif;
+    font-size: 20px;
+    font-weight: 700;
+    letter-spacing: -0.01em;
+    color: var(--text);
+    text-wrap: balance;
+    margin-bottom: 16px;
+    display: flex;
+    align-items: baseline;
+    gap: 12px;
+  }
+
+  h2 .n {
+    font-size: 11px;
+    font-weight: 500;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--accent);
+    flex-shrink: 0;
+    margin-top: 2px;
+    font-family: 'DM Sans', sans-serif;
+  }
+
+  p {
+    font-size: 15.5px;
+    color: var(--text-2);
+    margin-bottom: 14px;
+    max-width: 65ch;
+  }
+
+  p:last-child { margin-bottom: 0; }
+
+  ul, ol {
+    padding-left: 20px;
+    margin-bottom: 14px;
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    max-width: 65ch;
+  }
+
+  li {
+    font-size: 15.5px;
+    color: var(--text-2);
+    padding-left: 4px;
+  }
+
+  li::marker { color: var(--accent); }
+
+  strong { color: var(--text); font-weight: 500; }
+
+  a {
+    color: var(--accent);
+    text-decoration: underline;
+    text-underline-offset: 3px;
+    text-decoration-color: var(--border-accent);
+    transition: color 0.15s;
+  }
+
+  a:hover { color: var(--accent-dim); }
+
+  /* ── Highlight box ──────────────────────────────────────── */
+  .callout {
+    background: var(--chip-bg);
+    border-left: 3px solid var(--accent);
+    border-radius: 0 6px 6px 0;
+    padding: 14px 18px;
+    margin: 20px 0;
+    max-width: 65ch;
+  }
+
+  .callout p {
+    font-size: 14.5px;
+    margin: 0;
+    color: var(--text-2);
+  }
+
+  /* ── Contact card ───────────────────────────────────────── */
+  .contact-card {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    padding: 24px 28px;
+    margin-top: 24px;
+    max-width: 480px;
+  }
+
+  .contact-card .label {
+    font-size: 11px;
+    font-weight: 500;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--text-3);
+    margin-bottom: 10px;
+  }
+
+  .contact-card .name {
+    font-family: 'Syne', sans-serif;
+    font-size: 16px;
+    font-weight: 700;
+    color: var(--text);
+    margin-bottom: 4px;
+  }
+
+  .contact-card .email {
+    font-size: 14.5px;
+    color: var(--accent);
+    text-decoration: none;
+  }
+
+  .contact-card .email:hover { text-decoration: underline; }
+
+  /* ── Footer ─────────────────────────────────────────────── */
+  footer {
+    margin-top: 64px;
+    padding-top: 24px;
+    border-top: 1px solid var(--rule);
+    font-size: 13px;
+    color: var(--text-3);
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 8px;
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    *, *::before, *::after { transition: none !important; }
+  }
+</style>
+</head>
+<body>
+
+<div class="shell">
+
+  <!-- Sidebar TOC -->
+  <nav class="toc" aria-label="Table of contents">
+    <div class="toc-label">Contents</div>
+    <ul class="toc-list">
+      <li><a href="#overview">Overview</a></li>
+      <li><a href="#data-collected">Data We Collect</a></li>
+      <li><a href="#data-use">How We Use It</a></li>
+      <li><a href="#storage">Local Storage</a></li>
+      <li><a href="#third-parties">Third-Party Services</a></li>
+      <li><a href="#sharing">Data Sharing</a></li>
+      <li><a href="#retention">Retention &amp; Deletion</a></li>
+      <li><a href="#children">Children's Privacy</a></li>
+      <li><a href="#changes">Policy Changes</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+  </nav>
+
+  <!-- Main content -->
+  <main>
+    <header>
+      <div class="wordmark">
+        <div class="wordmark-icon">
+          <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <rect x="2" y="11" width="3" height="7" rx="0.5" fill="white" fill-opacity="0.7"/>
+            <rect x="7" y="7" width="3" height="11" rx="0.5" fill="white" fill-opacity="0.85"/>
+            <rect x="12" y="9" width="3" height="9" rx="0.5" fill="white" fill-opacity="0.85"/>
+            <rect x="17" y="4" width="2" height="14" rx="0.5" fill="white"/>
+            <path d="M3.5 9.5 L8.5 6 L13.5 7.5 L18.5 3.5" stroke="white" stroke-width="1.5" stroke-linecap="round"/>
+          </svg>
+        </div>
+        <span class="wordmark-text">AdWallet</span>
+      </div>
+
+      <h1>Privacy Policy</h1>
+
+      <div class="meta">
+        <span class="chip">AdMob Revenue Analytics</span>
+        <span class="meta-sep">·</span>
+        <span class="meta-date">Effective date: September 1, 2025</span>
+      </div>
+    </header>
+
+    <!-- 1. Overview -->
+    <section id="overview">
+      <h2><span class="n">01</span> Overview</h2>
+      <p>AdWallet is a mobile analytics application that connects to your Google AdMob account and presents your ad revenue data in a clear, easy-to-read format. This Privacy Policy describes what information AdWallet accesses, how it is used, and the choices you have regarding your data.</p>
+      <div class="callout">
+        <p><strong>Short version:</strong> AdWallet reads your AdMob reporting data to show it to you. It never writes to your account, never sells your data, and stores everything locally on your device.</p>
+      </div>
+    </section>
+
+    <!-- 2. Data We Collect -->
+    <section id="data-collected">
+      <h2><span class="n">02</span> Data We Collect</h2>
+      <p>AdWallet only accesses information necessary to deliver its analytics features:</p>
+      <ul>
+        <li><strong>Google account credentials</strong> — your OAuth access token and profile information (display name, email address, profile photo) obtained when you sign in with Google. These are stored locally on your device in the system Keychain.</li>
+        <li><strong>AdMob reporting data</strong> — revenue figures, impression counts, eCPM, and related metrics retrieved from the Google AdMob API. This data is fetched from Google's servers and displayed in-app; it is not transmitted to any server operated by AdWallet.</li>
+        <li><strong>App preferences</strong> — settings such as your preferred currency and notification preferences, stored locally via AsyncStorage.</li>
+        <li><strong>Purchase receipts</strong> — if you purchase the "Remove Ads" in-app upgrade, Google Play provides a purchase token used solely to verify and restore your entitlement. We do not store payment card details.</li>
+      </ul>
+    </section>
+
+    <!-- 3. How We Use It -->
+    <section id="data-use">
+      <h2><span class="n">03</span> How We Use Your Data</h2>
+      <p>All collected information is used exclusively to operate the app:</p>
+      <ul>
+        <li>Authenticate and maintain your signed-in session with Google.</li>
+        <li>Fetch and display your AdMob revenue metrics and reports.</li>
+        <li>Remember your in-app preferences across sessions.</li>
+        <li>Verify and restore your "Remove Ads" purchase status.</li>
+        <li>Deliver optional local notifications about your daily revenue (only if you enable this feature).</li>
+      </ul>
+      <p>We do not use your data for advertising, profiling, or any purpose other than operating AdWallet for you.</p>
+    </section>
+
+    <!-- 4. Local Storage -->
+    <section id="storage">
+      <h2><span class="n">04</span> Local Storage &amp; Security</h2>
+      <p>AdWallet is designed as a local-first application. Your credentials and settings never leave your device through AdWallet's own infrastructure:</p>
+      <ul>
+        <li><strong>Keychain</strong> — OAuth tokens are stored in Android Keystore / iOS Keychain, which is encrypted at the OS level and inaccessible to other apps.</li>
+        <li><strong>AsyncStorage</strong> — app preferences are stored in the device's local storage.</li>
+        <li><strong>No AdWallet backend</strong> — we do not operate a server that stores your personal data. All API calls are made directly from your device to Google's servers.</li>
+      </ul>
+    </section>
+
+    <!-- 5. Third-Party Services -->
+    <section id="third-parties">
+      <h2><span class="n">05</span> Third-Party Services</h2>
+      <p>AdWallet integrates with the following external services, each governed by its own privacy policy:</p>
+      <ul>
+        <li><strong>Google Sign-In</strong> — used for authentication. Subject to <a href="https://policies.google.com/privacy" target="_blank" rel="noopener">Google's Privacy Policy</a>.</li>
+        <li><strong>Google AdMob API</strong> — provides your revenue reporting data. Subject to <a href="https://policies.google.com/privacy" target="_blank" rel="noopener">Google's Privacy Policy</a>. AdWallet requests <em>read-only</em> access; it cannot create, modify, or delete any AdMob resource.</li>
+        <li><strong>Google Play Billing</strong> — processes the optional "Remove Ads" in-app purchase. Subject to <a href="https://policies.google.com/privacy" target="_blank" rel="noopener">Google's Privacy Policy</a>.</li>
+        <li><strong>Notifee</strong> — an open-source library used to schedule and display local notifications entirely on-device. No data is transmitted to external servers.</li>
+      </ul>
+    </section>
+
+    <!-- 6. Data Sharing -->
+    <section id="sharing">
+      <h2><span class="n">06</span> Data Sharing &amp; Disclosure</h2>
+      <p>We do not sell, rent, or share your personal information with third parties, except in the following limited circumstances:</p>
+      <ul>
+        <li><strong>Your explicit direction</strong> — for example, if you use an OS-level share feature within the app.</li>
+        <li><strong>Legal obligation</strong> — if required by applicable law, court order, or governmental authority.</li>
+      </ul>
+      <p>We have no advertising partners, analytics SDKs that collect personal data, or data brokers involved in the operation of AdWallet.</p>
+    </section>
+
+    <!-- 7. Retention -->
+    <section id="retention">
+      <h2><span class="n">07</span> Data Retention &amp; Deletion</h2>
+      <p>Because all data is stored on your device, you are in full control of its lifecycle:</p>
+      <ul>
+        <li><strong>Sign out</strong> — removes your stored OAuth tokens and clears your session immediately.</li>
+        <li><strong>Uninstall the app</strong> — removes all locally stored data, including settings and cached tokens.</li>
+        <li><strong>Revoke access</strong> — you can revoke AdWallet's Google account access at any time via <a href="https://myaccount.google.com/permissions" target="_blank" rel="noopener">Google Account Permissions</a>.</li>
+      </ul>
+      <p>We do not retain copies of your data on external servers, so there is no additional deletion step required on our end.</p>
+    </section>
+
+    <!-- 8. Children -->
+    <section id="children">
+      <h2><span class="n">08</span> Children's Privacy</h2>
+      <p>AdWallet is designed for AdMob publishers — individuals and organisations who monetise apps or websites through Google AdMob. It is not directed at children under the age of 13, and we do not knowingly collect personal information from children. If you believe a child has provided us with personal information, please contact us so we can address the situation.</p>
+    </section>
+
+    <!-- 9. Policy Changes -->
+    <section id="changes">
+      <h2><span class="n">09</span> Changes to This Policy</h2>
+      <p>We may update this Privacy Policy from time to time. When we do, we will revise the effective date at the top of this page. For significant changes, we will notify you through an in-app notice. Continued use of AdWallet after any changes constitutes your acceptance of the revised policy.</p>
+    </section>
+
+    <!-- 10. Contact -->
+    <section id="contact">
+      <h2><span class="n">10</span> Contact Us</h2>
+      <p>If you have any questions, concerns, or requests regarding this Privacy Policy or your data, please reach out:</p>
+      <div class="contact-card">
+        <div class="label">Developer Contact</div>
+        <div class="name">AdWallet — Adeona</div>
+        <a class="email" href="mailto:ibraarbi2@gmail.com">ibraarbi2@gmail.com</a>
+      </div>
+    </section>
+
+    <footer>
+      <span>AdWallet &copy; 2025 Adeona</span>
+      <span>Effective September 1, 2025</span>
+    </footer>
+  </main>
+
+</div>
+
+</body>
+</html>
